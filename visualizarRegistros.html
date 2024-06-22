@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Registros</title>
+    <link rel="stylesheet" href="css/styleRegistros.css">
+    <style>
+        .registro img {
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="registrosDePonto1.html">Acertos de ponto</a></li>
+            <li><a href="mapa.html">Mapa</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Consultar Funcionário</h1>
+        <form id="consultaFuncionarioForm">
+            <label for="nomeConsulta">Nome:</label>
+            <input type="text" id="nomeConsulta" name="nomeConsulta" required><br>
+            <button type="button" id="consultar">Consultar</button>
+            <button type="button" id="limpar">Limpar</button>
+        </form>
+        <div id="historicoPonto"></div>
+    </div>
+    <!-- Firebase scripts via CDN (carregados como scripts tradicionais) -->
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-storage-compat.js"></script>
+    <!-- Configuração e inicialização do Firebase -->
+    <script>
+        // Configuração do Firebase
+        const firebaseConfig = {
+    apiKey: "AIzaSyCCAmx_AKf8a6I5IXJRxG7SGs-4ZvU28n4",
+    authDomain: "registrodepontop.firebaseapp.com",
+    databaseURL: "https://registrodepontop-default-rtdb.firebaseio.com",
+    projectId: "registrodepontop",
+    storageBucket: "registrodepontop.appspot.com",
+    messagingSenderId: "756196331980",
+    appId: "1:756196331980:web:cf695d748fb65d67c80d69"
+};
+
+
+        // Inicializar o Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <!-- Script JavaScript -->
+    <script src="js/visualizarRegistros.js" defer></script>
+</body>
+</html>

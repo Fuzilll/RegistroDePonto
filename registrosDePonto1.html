@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de ponto</title>
+    <link rel="stylesheet" href="css/styleRegistros.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="visualizarRegistros.html">Acertos de ponto</a></li>
+            <li><a href="mapa.html">Mapa</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Registros de ponto</h1>
+        <form id="registrarPontoForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+            <label for="matricula">Matrícula:</label>
+            <input type="text" id="matricula" name="matricula" pattern="[0-9]{5}" title="Digite exatamente 5 números" required><br>
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required><br>
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora" required><br>
+
+            <h1>Captura de Imagem</h1>
+            <label for="imagem">Imagem:</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*" required><br><br>
+
+            <button type="button" id="btnRegistrarEntrada"><span class="material-icons">login</span> Registrar Entrada</button><br>
+            <button type="button" id="btnRegistrarSaida"><span class="material-icons">logout</span> Registrar Saída</button><br>
+
+        </form>
+    </div>
+    
+    <!-- Scripts do Firebase (compatíveis com ES5) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+    
+    <script src="config/firebase-config.js" type="module" defer></script>
+    
+    <script src="js/scriptPonto.js" type="module" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>

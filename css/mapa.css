@@ -1,0 +1,112 @@
+/* Estilo base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2E8B57; /* Verde */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+nav {
+    width: 100%;
+    background-color: #333;
+    color: white;
+}
+
+nav ul.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul.menu li {
+    margin: 0;
+}
+
+nav ul.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul.menu li a:hover {
+    background-color: #111;
+}
+
+#map {
+    width: 80%; /* Largura do mapa */
+    height: 60vh; /* Altura do mapa */
+    margin-top: 20px; /* Espaçamento acima do mapa */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
+
+/* Estilo para a caixa de pesquisa */
+.leaflet-control-geocoder-form {
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o input da caixa de pesquisa */
+.leaflet-control-geocoder-form input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Estilo para o botão da caixa de pesquisa */
+.leaflet-control-geocoder-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Estilo para o botão da caixa de pesquisa quando hover */
+.leaflet-control-geocoder-form button:hover {
+    background-color: #45a049;
+}
+
+/* Media Query para dispositivos móveis (até 600px de largura) */
+@media (max-width: 600px) {
+    #map {
+        width: 90%;
+        height: 50vh;
+        margin-top: 15px;
+    }
+}
+
+/* Media Query para tablets (de 601px a 1024px de largura) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #map {
+        width: 70%;
+        height: 50vh;
+        margin-top: 15px;
+    }
+}
+
+/* Media Query para desktops (acima de 1024px de largura) */
+@media (min-width: 1025px) {
+    #map {
+        width: 60%;
+        height: 60vh;
+        margin-top: 20px;
+    }
+}
